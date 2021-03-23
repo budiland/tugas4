@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Judul Tab -->
+    <title>Mortal Kombat Academy</title>
+    <style>
+        /* Warna Tombol */
+        .biru {
+            background-color: aqua;
+        }
+
+        .hijau {
+            background-color: limegreen;
+        }
+
+        .ungu {
+            background-color: violet;
+        }
+
+        .merah {
+            background-color: lightcoral;
+        }
+
+        .putih {
+            background-color: white;
+        }
+
+        /* Ukuran Gambar */
+        .sonya,
+        .subzero,
+        .scarb,
+        .scarg,
+        .scarp,
+        .scarr,
+        .reptile {
+            height: 10cm;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- TUGAS 1 -->
+    <!-- Membuat Button dan Gambar -->
+    <button class="sembunyi">Sembunyikan</button>
+    <button class="tampil">Tampilkan</button>
+    <img src="./img/Sonya_MK_11.png" alt="" class="sonya">
+
+    <button class="sembunyi2">sembunyikan</button>
+    <button class="tampil2">tampilkan</button>
+    <img src="./img/SubZeroMKXrender.png" alt="" class="subzero">
+
+    <!-- TUGAS 2 -->
+    <!-- Membuat Button dan Gambar -->
+    <br>
+    <br>
+    <button class="warnab">Biru</button>
+    <button class="warnah">Hijau</button>
+    <button class="warnau">Ungu</button>
+    <button class="warnam">Merah</button>
+    <br>
+    <img src="./img/Scarlet_Blue.jpg" alt="" class="scarb">
+    <img src="./img/Scarlet_Green.jpg" alt="" class="scarg">
+    <img src="./img/Scarlet_Purple.jpg" alt="" class="scarp">
+    <img src="./img/Scarlet_Red.jpg" alt="" class="scarr">
+
+    <!-- TUGAS 3 -->
+    <!-- Membuat Button dan Gambar -->
+    <br>
+    <br>
+    <button class="hilang">Hilang</button>
+    <button class="muncul">Muncul</button>
+    <button class="transparan">Transparan</button>
+    <button class="normal">Normal</button>
+    <br>
+    <img src="./img/Reptile.png" alt="" class="reptile">
+
+    <!-- Link Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <script>
+        // jQuery
+        // Fungsi Saat Web Ready
+        $(document).ready(function () {
+            // Tugas 1
+
+            // Fungsi Hide Gambar Saat Tombol di Klik
+            $(".sembunyi").click(function () {
+                $(".sonya").hide("slow");
+            });
+            // Fungsi Show Gambar Saat Tombol di Klik
+            $(".tampil").click(function () {
+                $(".sonya").show("slow");
+            });
+            $(".sembunyi2").click(function () {
+                $(".subzero").hide("slow");
+            });
+            $(".tampil2").click(function () {
+                $(".subzero").show("slow");
+            });
+
+            // Tugas 2
+
+            // Menyembunyikan Gambar
+            $(".scarg").hide("fast");
+            $(".scarp").hide("fast");
+            $(".scarr").hide("fast");
+            // Fungsi Double Klik
+            $(".warnab").dblclick(function () {
+                // Menampilkan satu gambar dan menyembunyikan lainnya
+                $(".scarb").show("fast");
+                $(".scarg").hide("fast");
+                $(".scarp").hide("fast");
+                $(".scarr").hide("fast");
+                // Menambah dan menghapus Class
+                $(this).addClass("biru");
+                $(".warnah").removeClass("hijau");
+                $(".warnau").removeClass("ungu");
+                $(".warnam").removeClass("merah");
+            });
+            $(".warnah").dblclick(function () {
+                $(".scarb").hide("fast");
+                $(".scarg").show("fast");
+                $(".scarp").hide("fast");
+                $(".scarr").hide("fast");
+                $(this).addClass("hijau");
+                $(".warnab").removeClass("biru");
+                $(".warnau").removeClass("ungu");
+                $(".warnam").removeClass("merah");
+            });
+            $(".warnau").dblclick(function () {
+                $(".scarb").hide("fast");
+                $(".scarg").hide("fast");
+                $(".scarp").show("fast");
+                $(".scarr").hide("fast");
+                $(this).addClass("ungu");
+                $(".warnab").removeClass("biru");
+                $(".warnah").removeClass("hijau");
+                $(".warnam").removeClass("merah");
+            });
+            $(".warnam").dblclick(function () {
+                $(".scarb").hide("fast");
+                $(".scarg").hide("fast");
+                $(".scarp").hide("fast");
+                $(".scarr").show("fast");
+                $(this).addClass("merah");
+                $(".warnab").removeClass("biru");
+                $(".warnah").removeClass("hijau");
+                $(".warnau").removeClass("ungu");
+            });
+
+            // Tugas 3
+
+            // Fungsi FadeOut Gambar
+            $(".hilang").click(function () {
+                $(".reptile").fadeOut("slow")
+            });
+            // Fungsi FadeIn Gambar
+            $(".muncul").click(function () {
+                $(".reptile").fadeIn("slow")
+            });
+            // Fungsi FadeTo Gambar
+            $(".transparan").click(function () {
+                $(".reptile").fadeTo("slow", 0.3)
+            });
+            // Fungsi FadeTo Gambar 
+            $(".normal").click(function () {
+                $(".reptile").fadeTo("slow", 1)
+            });
+        })
+    </script>
+</body>
+
+</html>
